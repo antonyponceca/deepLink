@@ -24,6 +24,30 @@ $ chmod +x deepLink.py
 $ ./deepLink.py [-h] (--adb | --apk APK | -l LAUNCH | -c CODE_SEARCH) [-p PACKAGE] [-s SERIAL] [-v]
 ```
 
+### List Deeplinks using ADB
+
+```
+$ ./deepLink.py --adb -p com.example.xyz [--verify]
+```
+
+### List Deeplinks from an APK
+
+```
+$ ./deepLink.py --apk /path/to/app.apk [--verify]
+```
+
+#### Open a specific deeplink
+
+```
+$ ./deepLink.py -l app://deeplink.xyz
+```
+
+#### Search for potential deeplinks handling in Java / Kotlin code
+
+```
+$ ./deepLink.py -c /path/to/project
+```
+
 ## Options
 
 ```
