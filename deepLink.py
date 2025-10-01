@@ -403,14 +403,14 @@ def main():
     banner()
     parser = argparse.ArgumentParser(description="App Links Recon Tool")
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--adb", action="store_true", help="Analyse depuis adb dumpsys package")
-    group.add_argument("--apk", type=str, help="Analyse depuis un APK")
-    group.add_argument("-l", "--launch", type=str, help="Lancer un deeplink")
+    group.add_argument("--adb", action="store_true", help="ADB Analyze")
+    group.add_argument("--apk", type=str, help="APK analyze")
+    group.add_argument("-l", "--launch", type=str, help="Launch a deeplink")
     group.add_argument("-c", "--code-search", type=str, help="Search for potential deeplink handling in JAVA / Kotlin code")
     
-    parser.add_argument("-p", "--package", type=str, help="Nom du package (ex: com.example.xyz)")
-    parser.add_argument("-s", "--serial", type=str, help="Device/emulator spécifique")
-    parser.add_argument("-v", "--verify", action="store_true", help="Vérification du assetlinks.json")
+    parser.add_argument("-p", "--package", type=str, help="Package Name (ex: com.example.xyz)")
+    parser.add_argument("-s", "--serial", type=str, help="Device/Emulator to use")
+    parser.add_argument("-v", "--verify", action="store_true", help="Verify Assets Links")
     
     args = parser.parse_args()
 
