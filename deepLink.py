@@ -362,6 +362,47 @@ def search_for_deeplink_handling_in_code(code_directory):
         r'getIntent\(\)\.getHost\(\)',     # Host part of the URI
         r'getIntent\(\)\.getPath\(\)',     # Path part of the URI
         r'setData\(\)'                     # Set data for the Intent (handling deeplinks)
+        r'intent\.data',                # Kotlin variant (accessing data directly)
+        r'intent\.action',              # Kotlin variant (accessing action directly)
+        r'intent\.scheme',              # Kotlin variant (accessing scheme directly)
+        r'intent\.host',                # Kotlin variant (accessing host directly)
+        r'intent\.path',                # Kotlin variant (accessing path directly)
+        r'UriMatcher\(',                # URI Matcher usage (e.g., for matching deeplinks in older apps)
+        r'Pattern\.compile\(',          # Compiling patterns for URI matching
+        r'Pattern\.matches\(',          # Matching a URI with a pattern
+        r'Uri\.getHost\(',              # Getting host from URI
+        r'Uri\.getPath\(',              # Getting path from URI
+        r'Uri\.getScheme\(',            # Getting scheme from URI
+        r'Uri\.getQueryParameter\(',    # Extract query parameters from URI
+        r'Uri\.getQueryParameterNames\(', # Getting all query parameters
+        r'Uri\.getFragment\(',          # Extract fragment from URI
+        r'Uri\.getAuthority\(',         # Extract authority from URI
+        r'Uri\.parse\(',                # Parsing URI in Java (e.g., `Uri.parse()`)
+        r'Intent\.setData\(',           # Setting data for Intent in Java
+        r'Intent\.setDataAndType\(',    # Setting data and type for Intent
+        r'Intent\.setAction\(',         # Setting action for Intent
+        r'getIntent\(\)\.getExtras\(\)', # Retrieve extras from Intent (can include deeplink info)
+        r'getIntent\(\)\.getStringExtra\(', # Retrieve string extra from Intent (could be deeplink related)
+        r'Intent\.getStringExtra\(',    # Common method for extracting specific data (extra)
+        r'@DeepLink\(',                     # DeepLink annotation to map deeplinks to activities
+        r'DeepLinkDispatch\.handleDeepLink\(', # Calling `handleDeepLink` to route deeplinks
+        r'Branch\.getInstance\(\)\.handleDeepLink\(',     # Handling deep link via Branch SDK
+        r'Branch\.getInstance\(\)\.initSession\(',         # Initializing a Branch session (used for deep links)
+        r'Branch\.getInstance\(\)\.setRequestMetadata\(',  # Setting metadata before handling deep link
+        r'FirebaseDynamicLinks\.getInstance\(\)\.getDynamicLink\(',  # Handling dynamic links with Firebase
+        r'FirebaseDynamicLinks\.getInstance\(\)\.createDynamicLink\(',  # Creating dynamic links
+        r'FirebaseDynamicLinks\.getInstance\(\)\.setEventListener\(',   # Setting listeners for dynamic links
+        r'URLDecoder\.decode\(',              # Decoding a URI (to handle deeplinks with encoded data)
+        r'URLEncoder\.encode\(',              # Encoding a URI (to handle deeplinks with encoded data)
+        r'NavController\.navigate\(',           # Navigating via the NavController (deep link)
+        r'NavDeepLinkBuilder\(',                # Builder for creating deep links with Navigation Component
+        r'@Route\(',                           # ARouter annotation for routing
+        r'ARouter\.getInstance\(\)\.build\(',   # ARouter deep link handling code
+        r'Observable\.just\(',                  # Observable-based approach for deeplink handling
+        r'SubscribeOn\(',                       # RxJava’s subscribeOn() method
+        r'.subscribe\(',                        # RxJava’s subscribe() method to handle deeplinks
+        r'Flowable\.fromCallable\(',             # Flowable used for handling deeplinks
+        r'Intent\.parseUri\(',                  # Parsing custom URIs
     ]
     deeplink_references = []
 
