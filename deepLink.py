@@ -344,9 +344,9 @@ def launch_deeplink(deeplink, serial=None):
     """
     try:
         run_adb_command(["shell", "am", "start", "-a", "android.intent.action.VIEW", "-c", "android.intent.category.BROWSABLE", "-d", deeplink], serial)
-        print(Fore.CYAN + "[*] " + Fore.RESET + "Deeplink lancé :" + deeplink)
+        print(f"{Fore.CYAN}[*] {Fore.RESET}Deeplink launched : {deeplink}")
     except Exception as e:
-        print(Fore.CYAN + "[!] " + Fore.RESET + "Impossible de lancer " + deeplink + ":" + e)
+        print(f"{Fore.RED}[!] {Fore.RESET}An error occured during deepling lauch {deeplink}: {e}")
 
 def search_for_deeplink_handling_in_code(code_directory):
     """
