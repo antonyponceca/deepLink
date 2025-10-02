@@ -10,6 +10,7 @@ deepLink is a python script allowing to list and verify deeplinks from Android a
 - tabulate
 - colorama
 - requests
+- adb
 
 ## Install
 
