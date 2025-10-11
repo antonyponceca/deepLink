@@ -22,7 +22,7 @@ $ chmod +x deepLink.py
 ## Usage
 
 ```
-$ ./deepLink.py [-h] (--adb | --apk APK | -l LAUNCH | -c CODE_SEARCH) [-p PACKAGE] [-s SERIAL] [-v]
+$ ./deepLink.py [-h] (--adb | --apk APK | -l LAUNCH | -c CODE_SEARCH) [-p PACKAGE] [-s SERIAL] [-v] [-o]
 ```
 
 ### List Deeplinks using ADB
@@ -65,18 +65,29 @@ options:
   -s SERIAL, --serial SERIAL
                         Device/Emulator to use
   -v, --verify          Verify Assets Links
+  -o OUTPUT, --output OUTPUT
+                        Save results in an output file
 ```
 
 ## Screenshots
 
-### Static Search from APK
-<img width="922" height="718" alt="DeepLink-APK-Check" src="https://github.com/user-attachments/assets/3b373620-2d1a-4e1e-afab-bb42a04711c1" />
+### PoC Scenarios (BugBazaar)
 
-### Dynamic Search from ADB
-<img width="709" height="643" alt="DeepLink-ADB-Check" src="https://github.com/user-attachments/assets/9b2f06b3-94f1-4fda-9af8-757c169c2bdf" />
+<img width="1157" height="909" alt="BugBazaar Deeplink check" src="https://github.com/user-attachments/assets/5b61f25f-d001-40a8-bac6-65b44e2195d7" />
+<img width="1649" height="53" alt="BugBazaar code search" src="https://github.com/user-attachments/assets/c807ab02-03bf-4c6d-a3e9-62be1b7ad706" />
+<img width="1368" height="485" alt="BugBazaar Code Review" src="https://github.com/user-attachments/assets/ba149d07-e593-43c7-8f49-2683ea404eec" />
 
-### Code search by patterns
-<img width="1765" height="670" alt="DeepLink-Code-Search" src="https://github.com/user-attachments/assets/3ac870c7-a131-48fc-9813-a546ed95d0b6" />
+#### Insecure Deeplink handling leads to CSRF
 
-### Launching a deeplink (insecure deeplink handling to webview hijacking example)
-<img width="1600" height="479" alt="DeepLink-Launch" src="https://github.com/user-attachments/assets/6e313a1d-7123-4305-8f77-52e693c9d5cf" />
+<img width="1792" height="719" alt="BugBazaar CSRF" src="https://github.com/user-attachments/assets/1dda50bc-77de-4101-abfa-480d85e0920c" />
+
+#### Insecure Deeplink handling leads to WebView Hijacking
+
+<img width="1829" height="720" alt="BugBazaar WebView Hijacking" src="https://github.com/user-attachments/assets/aeebd276-b4e4-43ed-ad4c-8289a11a8aeb" />
+
+
+
+
+
+
+
