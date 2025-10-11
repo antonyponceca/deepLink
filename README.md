@@ -71,19 +71,28 @@ options:
 
 ## Screenshots
 
-### PoC Scenarios (BugBazaar)
+### PoC Scenarios
+
+#### BugBazaar
 
 <img width="1157" height="909" alt="BugBazaar Deeplink check" src="https://github.com/user-attachments/assets/5b61f25f-d001-40a8-bac6-65b44e2195d7" />
 <img width="1649" height="53" alt="BugBazaar code search" src="https://github.com/user-attachments/assets/c807ab02-03bf-4c6d-a3e9-62be1b7ad706" />
 <img width="1368" height="485" alt="BugBazaar Code Review" src="https://github.com/user-attachments/assets/ba149d07-e593-43c7-8f49-2683ea404eec" />
 
-#### Insecure Deeplink handling leads to CSRF
+##### Insecure Deeplink handling leads to CSRF
 
 <img width="1792" height="719" alt="BugBazaar CSRF" src="https://github.com/user-attachments/assets/1dda50bc-77de-4101-abfa-480d85e0920c" />
 
-#### Insecure Deeplink handling leads to WebView Hijacking
+##### Insecure Deeplink handling leads to WebView Hijacking
 
 <img width="1829" height="720" alt="BugBazaar WebView Hijacking" src="https://github.com/user-attachments/assets/aeebd276-b4e4-43ed-ad4c-8289a11a8aeb" />
+
+#### Realistic Vulnerability Chaining
+
+##### Insecure Deeplink handling + WebView Hijacking + JavaScript Bridge leads to Command Injection
+
+<img width="1891" height="726" alt="RCE" src="https://github.com/user-attachments/assets/1fb59449-aefe-4409-8117-8ef8245faa56" />
+
 
 
 
