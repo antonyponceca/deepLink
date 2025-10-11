@@ -1,5 +1,5 @@
 # deepLink
-deepLink is a python script allowing to list and verify deeplinks from Android apps using an ADB access or an APK file.
+deepLink is a python script allowing to list, verify and exploit deeplinks from Android apps using an ADB access or an APK file.
 
 ## Prerequisites
 
