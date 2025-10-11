@@ -452,6 +452,7 @@ def main():
     parser.add_argument("-p", "--package", type=str, help="Package Name (ex: com.example.xyz)")
     parser.add_argument("-s", "--serial", type=str, help="Device/Emulator to use")
     parser.add_argument("-v", "--verify", action="store_true", help="Verify Assets Links")
+    parser.add_argument("-o", "--output", type=str, help="Save results in an output file")
     
     args = parser.parse_args()
 
@@ -486,6 +487,30 @@ def main():
         code_directory = args.code_search
         deeplink_references = search_for_deeplink_handling_in_code(code_directory)
         print_deeplink_references(deeplink_references)
+
+     if args.output:
+        try:
+            with open(args.output, "w", encoding="utf-8") as f:
+                if deeplinks:
+                    headers = ["Deeplink", "Scheme", "Authority", "Port", "Path", "Pattern", "AutoVerify"]
+                    f.write("=== Deeplinks Found ===\n")
+                    f.write(tabulate(deeplinks, headers=headers, tablefmt="grid"))
+                    f.write("\n\n")
+                if args.verify and deeplinks:
+                    f.write("=== Verification Results ===\n")
+                    headers = ["Host", "Package", "Fingerprints", "Status"]
+                    f.write(tabulate(results, headers=headers, tablefmt="grid"))
+                    f.write("\n\n")
+                if args.code_search:
+                    f.write("=== Code Search Results ===\n")
+                    if deeplink_references:
+                        for ref in deeplink_references:
+                            f.write(f"[File] {ref['file']} [Line {ref['line_number']}] {ref['line']}\n")
+                    else:
+                        f.write("No deeplink handling found in the code.\n")
+            print(f"\n{Fore.GREEN}[+]{Fore.RESET} Results saved to {args.output}")
+        except Exception as e:
+            print(f"{Fore.RED}[!]{Fore.RESET} Error saving output file: {e}")
 
 
 if __name__ == "__main__":
